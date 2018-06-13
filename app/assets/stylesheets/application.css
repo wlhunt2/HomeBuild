@@ -13,3 +13,95 @@
  *= require_tree .
  *= require_self
  */
+
+h1, h2 {
+    font-family: 'Oswald', sans-serif;
+}
+
+#userlogin {
+    position: relative;
+    float: right;
+    margin-top: 75px;
+    z-index: 3;
+    color: floralwhite;
+}
+
+a:link{
+    text-decoration: none;
+    color: black;
+}
+a:visited{
+    color: black;
+}
+
+a:hover{
+    color: white;
+}
+
+input[type=text] {
+    padding: 12px 12px;
+    border: 2px solid #005E32;
+    background-color: #f8f8f8;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+
+textarea {
+    height: 8vw;
+    width: 15vw;
+    padding: 12px 12px;
+    border: 2px solid #005E32;
+    background-color: #f8f8f8;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+div#review_rules_invisible { 
+    display: none; 
+    
+}
+
+input[type=radio]:after {
+    width: 1vw;
+    height: 1vw;
+    margin-right: 0.2vw;
+    margin-left: -0.2vw;
+    position: relative;
+    background-color: #eee;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #005E32;
+    box-shadow: 1px 1px 1px 1px gray;
+    
+}
+
+input[type=radio]:checked:after {
+    width: 1vw;
+    height: 1vw;
+    position: relative;
+    background-color: #005E32;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid #b6a154;
+    box-shadow: 1px 1px 1px 1px gray;
+    
+}
+
+input[type=button], input[type=submit] {
+    background-color: #005E32;
+	border: 2px solid black;
+	color: #b6a154;
+	padding: 12px 12px;
+	text-decoration: none;
+	cursor: pointer;
+	box-shadow: 1px 1px 1px 1px gray;
+}
+
+
+#logo {
+    margin-right: 35%;  /* Puts the logo closer to the left */
+}
