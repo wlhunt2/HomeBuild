@@ -1,6 +1,6 @@
-class ClientController < ApplicationController
+class ClientsController < ApplicationController
   def index
-    @clientsc = Client.all
+    @clients = Client.all
   end
 
   def show
@@ -8,15 +8,18 @@ class ClientController < ApplicationController
   end
 
   def new
+    @client = Client.new
   end
 
   def create
   end
 
   def edit
+    @client = Client.find(params[:id])
   end
 
   def update
+ 
   end
 
   def destroy

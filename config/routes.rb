@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  get 'client/index'
+  get 'clients/index'
 
-  get 'client/show'
+  get 'clients/show'
 
-  get 'client/new'
+  get 'clients/new'
 
-  get 'client/create'
+  get 'clients/create'
 
-  get 'client/edit'
+  get 'clients/edit'
 
-  get 'client/update'
+  get 'clients/update'
 
-  get 'client/destroy'
+  get 'clients/destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'welcome/index'
