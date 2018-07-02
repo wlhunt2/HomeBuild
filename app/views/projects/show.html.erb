@@ -1,0 +1,21 @@
+<main>
+  <p id="notice"><%= notice %></p>
+
+  <h1>Projects#show</h1>
+
+  <p>
+    Project:<br>
+    <%= @project.project_name %> <br>
+    <%= @project.address %> <br>
+    <%= @project.city %>, <%= @project.state %> <%= @project.zip %><br>
+
+
+    <%= button_to 'Destroy',
+                  project_path(@project),
+                  method: :delete,
+                  data: {confirm: 'You sure?'} %>
+  </p>
+
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
+</main>

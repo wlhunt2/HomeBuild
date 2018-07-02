@@ -4,25 +4,43 @@
 
     <h1>Builders</h1>
 
-    <table>
-      <thead>
-        <tr>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
+    <div class="test-client-links">
+      <p><%= button_to 'Create a Builder', new_builder_path, method: :get %></p>
+    </div>
 
-      <tbody>
+    <div class="innertube">
+      <h2>Builders List</h2>
+
+      <table class="table-fill">
+        <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Zip</th>
+          <th>email</th>
+
+        </tr>
+
         <% @builders.each do |builder| %>
           <tr>
-            <td><%= link_to 'Show', builder %></td>
-            <td><%= link_to 'Edit', edit_builder_path(builder) %></td>
-            <td><%= link_to 'Destroy', builder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= builder.first_name %> <%= builder.last_name %></td>
+            <td><%= builder.phone %></td>
+            <td><%= builder.address %></td>
+            <td><%= builder.city %></td>
+            <td><%= builder.state %></td>
+            <td><%= builder.zip %></td>
+            <td><%= builder.email %></td>
+            <td><%= button_to 'Show', builder_path(builder), method: :get %></td>
+            <td><%= button_to 'Edit', edit_builder_path(builder), method: :get %></td>
+            <td><%= button_to 'Destroy',
+                              builder_path(builder),
+                              method: :delete,
+                              data: {confirm: 'Are you sure you want to delete?'} %></td>
           </tr>
         <% end %>
-      </tbody>
-    </table>
+      </table>
+    </div>
 
-    <br>
-
-    <%= link_to 'New Builder', new_builder_path %>
   </main>

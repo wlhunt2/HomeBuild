@@ -1,0 +1,55 @@
+<%= form_with(model: project, local: true) do |f| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <th><%= f.label :project_name %>:</th>
+      <th><%= f.text_field :project_name %>  </th>
+      <th><%= f.label :project_identifier %>:</th>
+      <th><%= f.text_field :project_identifier %></th>
+    </tr>
+
+    <tr>
+      <th><%= f.label :total_cost %>:</th>
+      <th><%= f.text_field :total_cost %>  </th>
+    </tr>
+  </table>
+
+  <p>
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %><br>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %><br>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %><br>
+    <%= f.label :city %><br>
+    <%= f.text_field :city %><br>
+    <%= f.label :state %><br>
+    <%= f.text_field :state %><br>
+    <%= f.label :zip %><br>
+    <%= f.text_field :zip %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<!--  <div class="actions">-->
+    <%#= form.submit %>
+<!--  </div>-->
+<% end %>

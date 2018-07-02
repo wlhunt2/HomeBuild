@@ -1,3 +1,5 @@
+# TODO: edit clients/new.html.erb - take table info and put in _form similar to Builder _form
+
 class ClientsController < ApplicationController
   def index
     @clients = Client.all

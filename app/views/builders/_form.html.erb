@@ -1,4 +1,4 @@
-<%= form_with(model: builder, local: true) do |form| %>
+<%= form_with(model: builder, local: true) do |f| %>
   <% if builder.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(builder.errors.count, "error") %> prohibited this builder from being saved:</h2>
@@ -11,7 +11,39 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <table>
+    <tr>
+      <th><%= f.label :first_name %>:</th>
+      <th><%= f.text_field :first_name %>  </th>
+      <th><%= f.label :last_name %>:</th>
+      <th><%= f.text_field :last_name %></th>
+    </tr>
+
+    <tr>
+      <th><%= f.label :phone %>:</th>
+      <th><%= f.text_field :phone %>  </th>
+      <th><%= f.label :email %>:</th>
+      <th><%= f.text_field :email %></th>
+    </tr>
+  </table>
+
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %><br>
+    <%= f.label :city %><br>
+    <%= f.text_field :city %><br>
+    <%= f.label :state %><br>
+    <%= f.text_field :state %><br>
+    <%= f.label :zip %><br>
+    <%= f.text_field :zip %>
+  </p>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<!--  <div class="actions">-->
+    <%#= form.submit %>
+<!--  </div>-->
 <% end %>

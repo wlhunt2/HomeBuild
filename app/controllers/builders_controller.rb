@@ -21,6 +21,8 @@ class BuildersController < ApplicationController
 
   # GET /builders/1/edit
   def edit
+    @builder = Builder.find(params[:id])
+
   end
 
   # POST /builders
@@ -65,13 +67,13 @@ class BuildersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_builder
-      @builder = Builder.find(params[:id])
-    end
+  def set_builder
+    @builder = Builder.find(params[:id])
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def builder_params
-      params.require(:builder).permit(:first_name, :last_name, :phone, :email,
-                                    :address, :city, :state, :zip)
-    end
+  def builder_params
+    params.require(:builder).permit(:first_name, :last_name, :phone, :email,
+                                  :address, :city, :state, :zip)
+  end
 end
