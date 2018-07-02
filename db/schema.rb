@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180702183952) do
+ActiveRecord::Schema.define(version: 20180702194812) do
 
   create_table "builders", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20180702183952) do
     t.string "state"
     t.integer "zip"
     t.string "description"
+    t.integer "percent_complete"
   end
 
 end
