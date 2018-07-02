@@ -1,7 +1,66 @@
 
 <body>
-<div class="main-content">
+  <main>
   <h1>Client#new</h1>
   <p>Find me in app/views/client/new.html.erb</p>
-</div>
+
+  <div class="innertube">
+
+    <h1>Add a New Client</h1>
+
+    <%= form_for @client do |f| %>
+
+      <%# if @course.errors.any? %>
+<!--        <div id="error_explanation">-->
+<!--          <h2>-->
+<!--            <%#= pluralize(@course.errors.count, "error") %> prohibited-->
+<!--            this course from being saved:-->
+<!--          </h2>-->
+<!--          <ul>-->
+            <%# @course.errors.full_messages.each do |msg| %>
+<!--              <li><%#= msg %></li>-->
+            <%# end %>
+<!--          </ul>-->
+<!--        </div>-->
+      <%# end %>
+
+      <table>
+        <tr>
+          <th><%= f.label :first_name %>:</th>
+          <th><%= f.text_field :first_name %>  </th>
+          <th><%= f.label :last_name %>:</th>
+          <th><%= f.text_field :last_name %></th>
+        </tr>
+
+        <tr>
+          <th><%= f.label :phone %>:</th>
+          <th><%= f.text_field :phone %>  </th>
+          <th><%= f.label :email %>:</th>
+          <th><%= f.text_field :email %></th>
+        </tr>
+      </table>
+
+      <p>
+        <%= f.label :address %><br>
+        <%= f.text_field :address %><br>
+        <%= f.label :city %><br>
+        <%= f.text_field :city %><br>
+        <%= f.label :state %><br>
+        <%= f.text_field :state %><br>
+        <%= f.label :zip %><br>
+        <%= f.text_field :zip %>
+      </p>
+
+
+
+      <p>
+        <%= f.submit %>
+      </p>
+
+    <% end %>
+
+  </div>
+
+
+  </main>
 </body>

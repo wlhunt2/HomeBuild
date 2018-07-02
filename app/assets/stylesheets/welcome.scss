@@ -45,17 +45,12 @@ body {
 		main {
 			position: fixed;
 			top: 100px; /* Set this to the height of the header */
-			left: 200px;
+			left: 210px;
 			right: 0;
 			bottom: 0;
 			overflow: auto; 
 			background: #fff;
             z-index: 0;
-		}
-		
-		.main-content {
-			margin: 115px; /* Provides padding for the content */
-            margin-left: 210px;
 		}
 		
 		p {

@@ -92,9 +92,9 @@ input[type=radio]:checked:after {
 }
 
 input[type=button], input[type=submit] {
-    background-color: #005E32;
+    background-color: #195DB0;
 	border: 2px solid black;
-	color: #b6a154;
+	color: #ffffff;
 	padding: 12px 12px;
 	text-decoration: none;
 	cursor: pointer;

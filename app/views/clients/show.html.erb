@@ -1,6 +1,21 @@
 <body>
-<div class="main-content">
+  <main>
   <h1>Clients#show</h1>
-  <p>Find me in app/views/clients/show.html.erb</p>
-</div>
+
+  <p>
+    Client:<br>
+    <%= @client.first_name %> <%= @client.last_name %><br>
+    <%= @client.address %> <br>
+    <%= @client.city %>, <%= @client.state %> <%= @client.zip %><br>
+
+
+    <%= button_to 'Destroy',
+                client_path(@client),
+                method: :delete,
+                data: {confirm: 'You sure?'} %>
+  </p>
+
+
+
+  </main>
 </body>
