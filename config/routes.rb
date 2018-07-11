@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :projects
-  resources :builders
+
+
   get 'clients/index'
 
   get 'clients/show'
@@ -18,7 +18,15 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'welcome/index'
 
-  resources :clients
+  resources :projects
+
+  resources :builders do
+    resources :projects
+  end
+
+  resources :clients do
+    resources :projects
+  end
 
   root 'welcome#index'
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180702194812) do
+ActiveRecord::Schema.define(version: 20180711155040) do
 
   create_table "builders", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -50,6 +50,10 @@ ActiveRecord::Schema.define(version: 20180702194812) do
     t.integer "zip"
     t.string "description"
     t.integer "percent_complete"
+    t.integer "builder_id"
+    t.integer "client_id"
+    t.index ["builder_id"], name: "index_projects_on_builder_id"
+    t.index ["client_id"], name: "index_projects_on_client_id"
   end
 
 end
