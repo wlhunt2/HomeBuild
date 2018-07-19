@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180711155040) do
+ActiveRecord::Schema.define(version: 20180712201408) do
 
   create_table "builders", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -23,6 +23,20 @@ ActiveRecord::Schema.define(version: 20180711155040) do
     t.string "state"
     t.integer "zip"
     t.string "email"
+  end
+
+  create_table "builders_clients", id: false, force: :cascade do |t|
+    t.integer "builder_id", null: false
+    t.integer "client_id", null: false
+    t.index ["builder_id", "client_id"], name: "index_builders_clients_on_builder_id_and_client_id"
+    t.index ["client_id", "builder_id"], name: "index_builders_clients_on_client_id_and_builder_id"
+  end
+
+  create_table "builders_projects", id: false, force: :cascade do |t|
+    t.integer "builder_id", null: false
+    t.integer "project_id", null: false
+    t.index ["builder_id", "project_id"], name: "index_builders_projects_on_builder_id_and_project_id"
+    t.index ["project_id", "builder_id"], name: "index_builders_projects_on_project_id_and_builder_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -38,6 +52,13 @@ ActiveRecord::Schema.define(version: 20180711155040) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "clients_projects", id: false, force: :cascade do |t|
+    t.integer "client_id", null: false
+    t.integer "project_id", null: false
+    t.index ["client_id", "project_id"], name: "index_clients_projects_on_client_id_and_project_id"
+    t.index ["project_id", "client_id"], name: "index_clients_projects_on_project_id_and_client_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -50,10 +71,6 @@ ActiveRecord::Schema.define(version: 20180711155040) do
     t.integer "zip"
     t.string "description"
     t.integer "percent_complete"
-    t.integer "builder_id"
-    t.integer "client_id"
-    t.index ["builder_id"], name: "index_projects_on_builder_id"
-    t.index ["client_id"], name: "index_projects_on_client_id"
   end
 
 end
